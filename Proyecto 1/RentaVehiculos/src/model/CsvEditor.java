@@ -14,11 +14,11 @@ public class CsvEditor {
 
 		
 		
-		public void registrarVehiculo(String categoria , String color, String marca, String modelo, String placa,String transmision, String capacidad, String disponibilidad,String registro) {
+		public void registrarVehiculo(String categoria , String color, String marca, String modelo, String placa,String transmision, String capacidad, String disponibilidad,String registro, String nombre_sede) {
 		
 		
 		String filePath = "DATA/inventario/vehiculos.csv";
-		String a =  categoria + "," + color + ","  +  marca + "," + modelo+ "," + placa+ "," +  transmision+ "," +  capacidad + "," + disponibilidad+ "," + registro;
+		String a =  categoria + "," + color + ","  +  marca + "," + modelo+ "," + placa+ "," +  transmision+ "," +  capacidad + "," + disponibilidad+ "," + registro+ "," + nombre_sede+ ","+",";
 				
 				
 				try {
@@ -66,10 +66,13 @@ public class CsvEditor {
 					 String capacidad = Integer.toString(mapVehiculos.get(placa).capacidad);
 					 String disponibilidad = mapVehiculos.get(placa).disponibilidad;
 					 String registro = mapVehiculos.get(placa).registro;
-					 
+					 String nombre_sede = mapVehiculos.get(placa).nombre_sede;
+					 String fecha_disp = Integer.toString(mapVehiculos.get(placa).fecha_disp);
+					 String usuario_cliente = mapVehiculos.get(placa).usuario_cliente;;
+
 
 					 
-					 String cadenaComas =  categoria + "," + color + "," + marca + "," + modelo + "," + plate + "," +  transmision + "," + capacidad +","+ disponibilidad + "," + registro ;
+					 String cadenaComas =  categoria + "," + color + "," + marca + "," + modelo + "," + plate + "," +  transmision + "," + capacidad +","+ disponibilidad + "," + registro + "," + nombre_sede + "," + fecha_disp +","+ usuario_cliente ;
 					 writer.newLine();
 					 writer.write(cadenaComas);
 			            

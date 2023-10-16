@@ -68,10 +68,15 @@ public class ViewAdminGlobal {
 					
 					System.out.println("9. Registro: ");
 					String registro = scanner.nextLine();
+
+					System.out.println("10. Nombre de la sede: ")
+					String nombre_sede = scanner.nextLine();
+					
+			
 					
 					
 					
-					csvE.registrarVehiculo(categoria,color,marca,modelo,placa,transmision,capacidad,disponibilidad,registro);
+					csvE.registrarVehiculo(categoria,color,marca,modelo,placa,transmision,capacidad,disponibilidad,registro,nombre_sede);
 					cd.cargarTodo(cd);
 					
 					

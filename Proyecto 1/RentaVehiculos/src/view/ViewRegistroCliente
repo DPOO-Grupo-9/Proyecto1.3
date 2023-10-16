@@ -1,0 +1,103 @@
+package view;
+
+import java.util.Scanner;
+import java.util.Set;
+
+import model.CargaDatos;
+import model.MenuPrinter;
+import model.CsvEditor;
+
+public class ViewRegistroCliente {
+
+    public static void main(String[] args) {
+
+	MenuPrinter mp =new MenuPrinter();
+	CargaDatos cd = new CargaDatos();
+	Scanner scanner = new Scanner(System.in);
+	CsvEditor csv = new CsvEditor();
+    Set<String> setClientes =cd.clientes.keySet();
+
+    System.out.println("Bienvenido Cliente Nuevo\n");
+    System.out.println("Por favor ingrese los siguientes datos\n>");
+				
+    System.out.println("Usuario: ");
+    String usuario = scanner.nextLine();
+
+    if(!(setClientes.contains(usuario))){
+
+        
+    System.out.println("Contraseña: \n>");
+    String contrasena = scanner.nextLine();
+
+    System.out.println("Nombre: \n>");
+    String nombre = scanner.nextLine();
+    
+    System.out.println("Apellido: \n>");
+    String apellido = scanner.nextLine();
+    
+    System.out.println("Numero de contacto: \n>");
+    String numCedula = scanner.nextLine();
+    
+    System.out.println("Fecha nacimiento (formato AAAA/MM/DD): \n>");
+    String fechaNacimiento = scanner.nextLine();
+
+
+    System.out.println("Nacionalidad: \n>");
+    String nacionalidad = scanner.nextLine();
+    
+    System.out.println("Imagen documento: \n>");
+    String fotoCedula = scanner.nextLine();
+
+    System.out.println("Numero de celular: \n>");
+    String celular = scanner.nextLine();
+
+    System.out.println("Correo: \n>");
+    String correo = scanner.nextLine();
+
+    System.out.println("Numero de licencia: \n>");
+    String numLicencia = scanner.nextLine();
+
+    System.out.println("Pais de expedición: \n>");
+    String paisLicencia = scanner.nextLine();
+
+    System.out.println("Fecha de vencimiento: \n>");
+    String vencimientoLicencia = scanner.nextLine();
+
+    System.out.println("Imagen de la licencia: \n>");
+    String fotoLicencia = scanner.nextLine();
+
+    System.out.println("nombre en la tarjeta de credito: \n>");
+    String nombreTarjeta; = scanner.nextLine();
+
+    System.out.println("Numero de la tarjeta de credito: \n>");
+	String numeroTarjeta; = scanner.nextLine();
+
+    System.out.println("Foto de la tarjeta de credito: \n>");
+	String fotoTarjeta = scanner.nextLine();
+	
+    csv.registrarCliente(
+        String usuario, 
+        String contrasena, 
+        String nombre, 
+        String apellido, 
+        String numCedula, 
+        String fechaNacimiento, 
+        String nacionalidad, 
+        String fotoCedula, 
+        String celular, 
+        String correo, 
+        String numLicencia, 
+        String paisLicencia, 
+        String vencimientoLicencia, 
+        String fotoLicencia, 
+        String nombreTarjeta, 
+        String numeroTarjeta, 
+        String fotoTarjeta
+    )
+	cd.cargarClientes();
+    }
+    else{System.out.println("El usuario ya existe.");}
+}
+}
+
+    
