@@ -24,6 +24,7 @@ public class CargaDatos {
 	public HashMap <String, Vehiculo> vehiculos= new HashMap<String, Vehiculo>() ;
 	public HashMap <String, HashMap<String,Integer>> tarifasCategoria= new HashMap<>() ;
 	public HashMap <String, Integer> tarifasSeguros= new HashMap<String, Integer>() ;
+	public ArrayList <String> categoria = new HashMap<String>() ;
 	
 	
 	
@@ -327,6 +328,10 @@ public class CargaDatos {
 			int capacidad =  Integer.parseInt(info[6].trim());
 			String disponibilidad =  info[7].trim();
 			String registro =  info[8].trim();
+			String nombre_sede = info[9].trim();
+			int fecha_disp = Integer.parseInt(info[10].trim());
+			String usuario_cliente = info[11].trim();
+			
 			
 			
 			
@@ -339,7 +344,11 @@ public class CargaDatos {
 			v.setCapacidad(capacidad);
 			v.setDisponibilidad(disponibilidad);
 			v.setRegistro(registro);
-			
+			v.set_fecha(fecha_disp);
+			v.set_nombre_cliente(usuario_cliente);
+			v.set_nombre_sede(nombre_sede);
+			v.set_fecha(fecha_disp);
+			v.set_nombre_cliente(usuario_cliente);
 				
 			vehiculos.put(placa, v);
 			
@@ -437,7 +446,20 @@ public void cargarSeguros() {
 }
 
 
-
+public void cargarcategorias() {
+	try {
+		
+		BufferedReader lector = new BufferedReader(new FileReader("DATA/inventario/categorias.csv"));
+		
+		String linea  = (lector.readLine());
+	
+		String[] categorias = linea.split(",");
+	}
+	lector.close();
+	
+catch(Exception e ) {System.out.println("Hubo un error en la carga de categorias "); e.printStackTrace();}
+}
+		
 
 
 

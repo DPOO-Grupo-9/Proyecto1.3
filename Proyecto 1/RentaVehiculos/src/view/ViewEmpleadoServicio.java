@@ -28,7 +28,7 @@ public class ViewEmpleadoServicio {
 			
 			//ESTO VA A SER UN BLOQUE DE CODIGO RE DENSO SO BUSQUEN EL SIGUIENTE XXXXXXXXXXXXXXX PARA EL SIGUIENTE REQ
 			//NO SE ASUSTEN THO, QUE SOLO ESTOY SOLICITANDO MUCHA INFO AL USUARIO PARA REGISRAR A UN CLIENTE
-			if(eleccion.equals("1")) {
+			"""if(eleccion.equals("1")) {
 				
 				System.out.println("Escogiste Registrar un cliente, por favor ingrese la siguiente informacion:\n");
 				
@@ -108,15 +108,48 @@ public class ViewEmpleadoServicio {
 				
 			}
 			
-			
+			""";
 			
 			//XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 			
 			
 			else if(eleccion.equals("2")) {
-				//Aquí se debe iniciar el codigo para ejecutar el req2
-				System.out.println("Escogiste req 2");
+				System.out.println("Escogiste realizar una transeferencia interna de un vehiculo, por favor ingrese la siguiente informacion:\n");
 				
+					System.out.println("Escriba la placa del vehiculo para continuar\n>");
+					
+					String placa = scanner.nextLine();
+
+					System.out.println("Escriba la sede a la cual se quiere cambiar\n>");
+					
+					String sede = scanner.nextLine();
+					
+				
+					if (cd.vehiculos.containsKey(placa)) {
+						
+						
+						Vehiculo vehiculo = cd.vehiculos.get(placa); 
+
+						cd.vehiculos.remove(placa);
+
+						vehiculo.set_nombre_sede(sede)
+
+						cd.vehiculos.put(vehiculo)
+						
+						csvE.escribirVehiculos(cd.vehiculos, cd.titulosVehiculos);
+						
+						cd.cargarVehiculos();
+						
+				   
+						System.out.println("El vehiculo con placa "+ placaRemover + " ha sido cambiado de sede.");
+					
+					} 
+					else {
+						System.out.println("El vehiculo con la placa "+ placaRemover + " no está registrado");
+						
+					}
+				
+				}
 			}
 			else if (eleccion.equals("3")) {
 				

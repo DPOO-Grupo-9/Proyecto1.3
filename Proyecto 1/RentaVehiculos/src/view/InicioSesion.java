@@ -23,12 +23,20 @@ public class InicioSesion {
 	try {
 	while(seguir) {
 	System.out.println("===================================================");
-	System.out.println("| Presione enter para continuar o escriba salir |");
+	System.out.println("| Presione enter para continuar, escriba 1 para registrarse como cliente o escriba salir |");
 	System.out.println("===================================================");
 	System.out.println(">");
 	String userContinuar = scanner.nextLine();
 		
-	if (!userContinuar.equals("salir")) {
+	if (userContinuar.equals("1")) {
+		
+			ViewRegistroCliente vag = new ViewRegistroCliente();
+			ViewRegistroCliente.main(args);
+			seguir =false;
+	
+	}
+
+	else if (!userContinuar.equals("salir")) {
 		
 	//XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 	System.out.println("POR FAVOR INICIA SESIÓN\n");
